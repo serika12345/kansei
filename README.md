@@ -11,6 +11,16 @@ swift run KanseiMissionClose
 
 初回起動時はアクセシビリティ権限を許可してください。
 
+## Build App
+
+```sh
+nix develop
+scripts/build-app.sh release
+open dist/KanseiMissionClose.app
+```
+
+`.app`で起動した場合は、ターミナル実行とは別アプリとしてアクセシビリティ権限を許可してください。
+
 ## What It Does
 
 - `AXUIElement`で各アプリのウィンドウを列挙します。

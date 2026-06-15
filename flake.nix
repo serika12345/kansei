@@ -33,6 +33,7 @@
               export PATH="$DEVELOPER_DIR/Toolchains/XcodeDefault.xctoolchain/usr/bin:$DEVELOPER_DIR/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
               export SDKROOT="$(/usr/bin/xcrun --sdk macosx --show-sdk-path)"
               echo "Run: swift run KanseiMissionClose"
+              echo "App: scripts/build-app.sh release"
             '';
           };
         });
