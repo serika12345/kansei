@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:kansei}",
+      "name": "Debug KanseiMissionClose",
+      "target": "KanseiMissionClose",
+      "configuration": "debug",
+      "preLaunchTask": "swift: Build Debug KanseiMissionClose"
+    },
+    {
+      "type": "swift",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:kansei}",
+      "name": "Release KanseiMissionClose",
+      "target": "KanseiMissionClose",
+      "configuration": "release",
+      "preLaunchTask": "swift: Build Release KanseiMissionClose"
+    }
+  ]
+}
