@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Kansei Mission Close</string>
+	<string>Kansei</string>
 	<key>CFBundleExecutable</key>
 	<string>KanseiMissionClose</string>
 	<key>CFBundleIconFile</key>
@@ -13,11 +13,11 @@
 	<key>CFBundleIconName</key>
 	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
-	<string>dev.masato.KanseiMissionClose</string>
+	<string>dev.masato.Kansei</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Kansei Mission Close</string>
+	<string>Kansei</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

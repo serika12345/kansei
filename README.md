@@ -1,4 +1,4 @@
-# Kansei Mission Close
+# Kansei
 
 Mission Controlに閉じるボタンを重ねるアプリケーションです。
 
@@ -16,7 +16,7 @@ swift run KanseiMissionClose
 ```sh
 nix develop
 scripts/build-app.sh release
-open dist/KanseiMissionClose.app
+open dist/Kansei.app
 ```
 
 `.app`で起動した場合は、ターミナル実行とは別アプリとしてアクセシビリティ権限を許可してください。
