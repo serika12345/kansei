@@ -31,6 +31,7 @@ mkdir -p "$macos_dir" "$resources_dir"
 
 cp "$bin_dir/$product" "$macos_dir/$product"
 cp "$root/Bundle/Info.plist" "$contents_dir/Info.plist"
+cp "$root/Assets/MenuBarIcon@2x.png" "$resources_dir/MenuBarIcon@2x.png"
 chmod +x "$macos_dir/$product"
 
 swift "$root/scripts/generate-app-icon-assets.swift" \

@@ -5,6 +5,8 @@ import PrivateAX
 
 private let axTrustedCheckOptionPromptKey = "AXTrustedCheckOptionPrompt"
 private let axCloseActionName = "AXClose"
+private let statusItemTitle = "Kansei"
+private let menuBarIconName = "MenuBarIcon@2x"
 
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
@@ -64,8 +66,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func configureStatusItem() {
-        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        statusItem.button?.title = "Kansei"
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        if let iconURL = Bundle.main.url(forResource: menuBarIconName, withExtension: "png"),
+           let image = NSImage(contentsOf: iconURL) {
+            image.size = NSSize(width: 18, height: 18)
+            image.isTemplate = true
+            statusItem.button?.image = image
+            statusItem.button?.imagePosition = .imageOnly
+            statusItem.button?.toolTip = statusItemTitle
+        } else {
+            statusItem.button?.title = statusItemTitle
+        }
         statusItem.isVisible = true
 
         let menu = NSMenu()
@@ -127,12 +138,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         updateMissionControlReadiness()
         guard missionControlOverlayReady else {
             overlayController.hide()
-            statusItem.button?.title = "Kansei"
+            statusItem.button?.toolTip = statusItemTitle
             return
         }
 
         overlayController.show(windows: missionControlWindows)
-        statusItem.button?.title = "Kansei \(missionControlWindows.count)"
+        statusItem.button?.toolTip = "\(statusItemTitle): \(missionControlWindows.count) windows"
     }
 
     private func deactivateOverlay() {
@@ -147,7 +158,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         if overlayController.isShowing {
             overlayController.hide()
-            statusItem.button?.title = "Kansei"
+            statusItem.button?.toolTip = statusItemTitle
         }
     }
 
